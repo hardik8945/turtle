@@ -1,18 +1,18 @@
-  import turtle
+import turtle
 from random import randint
 
 
 def tur2(m,n):
     turtle.bgcolor("black")
     seurat=turtle.Turtle()
-    width=3
-    height=9
+    width=5
+    height=7
     dot_distance=30
     seurat.setpos(-250,250)
     seurat.color("white")
-    k=3
-    l=2
-    f=1
+    k=0
+    l=0
+    f=0
     seurat.penup()
     list_color=["white","yellow","brown","red","blue","green","pink","violet"]
     
@@ -26,15 +26,15 @@ def tur2(m,n):
     col=randint(0,10)
     seurat.color(list_color[col])
     while(k<m and l<n):
-        if f==0:
+        if f==1:
             seurat.right(90)
         #printing the first row from the remaining rows
         for i in range(l,n):
             seurat.dot()
             seurat.forward(dot_distance)
 #            print(a[k][i],end=" ")
-        k+=2
-        f=8
+        k+=1
+        f=1
         seurat.right(90)
         #printing the last column from the remaining columns
         col=randint(0,10)
@@ -44,7 +44,7 @@ def tur2(m,n):
             seurat.dot()
             seurat.forward(dot_distance)
 #            print(a[i][n-1],end=" ")
-        n-=2
+        n-=1
         seurat.right(10)
         col=randint(0,90)
         seurat.color(list_color[col])
